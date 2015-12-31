@@ -39,12 +39,11 @@ public class Solution {
 			map.put(arr[i], i);
 		}
 
-		int count = Math.min(k, arr.length);
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < Math.min(k, arr.length); i++) {
 			int max = maxHeap.remove();
 			int maxIdx = map.get(max);
 			if (max == arr[i]) {
-				count++;
+				k++;
 				continue;
 			}
 
